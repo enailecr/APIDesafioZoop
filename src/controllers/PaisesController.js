@@ -46,7 +46,21 @@ async function deleteByName(req, res) {
         }
         return res.status(200).json(pais);
     } catch (err) {
-        console.error('ERROR <getByName>', err);
+        console.error('ERROR <deleteByName>', err);
+        return res.status(500).send();
+    }
+}
+
+async function getCountry(req, res) {
+    const { params: { id } } = req;
+    try {
+        const pais = await Paises.findById(id);
+        if (!pais) {
+            return res.status(404).send('País não encontrado');
+        }
+        return res.status(200).json(pais);
+    } catch (err) {
+        console.error('ERROR <getCountry>', err);
         return res.status(500).send();
     }
 }
@@ -56,4 +70,5 @@ module.exports = {
     getAll,
     insertCountry,
     deleteByName,
+    getCountry,
 }

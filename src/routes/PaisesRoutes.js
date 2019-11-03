@@ -5,4 +5,5 @@ module.exports = (app) => {
     app.get('/paises/', controller.getAll);
     app.post('/paises/', controller.insertCountry);
     app.delete('/paises/:nome', controller.deleteByName);
+    app.get('/pais/:id', controller.getCountry);
 }
