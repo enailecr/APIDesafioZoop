@@ -5,15 +5,6 @@ const uri = process.env.DB_URI;
 
 mongoose.connect(uri, { useNewUrlParser: true });
 
-// mongoose.connection.on('connected', () => {
-//     console.log(`MongoDB connected at ${uri}`);
-//     try {
-//         const promise = new Promise((resolve, reject) => initialData.insertInitialData(resolve, reject));
-//         promise.then((retorno) => console.log(retorno));
-//     } catch (err) {
-//         console.error('ERROR <insertInitialData>', err);
-//     }
-// });
 mongoose.connection.on('connected', async () => {
     console.log(`MongoDB connected at ${uri}`);
     try {
