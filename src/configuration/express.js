@@ -5,10 +5,15 @@ const consign = require('consign');
 
 const config = require('./config');
 
+const swaggerUi = require('swagger-ui-express');
+const openApiDocumentation = require('./swagger');
+
 module.exports = () => {
   const app = express();
-
+  
   app.set('port', config.PORT);
+  
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
