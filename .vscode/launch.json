@@ -21,7 +21,8 @@
                 "PORT": "10082",
                 "ENV": "dev",
                 "DB_URI": "mongodb://localhost:27017/local",
-                "API_RESTCOUNTRIES": "https://restcountries.eu/rest/v2/all"
+                "API_RESTCOUNTRIES": "https://restcountries.eu/rest/v2/all",
+                "HOST": "localhost:10082",
             },
         }
     ]

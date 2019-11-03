@@ -1,4 +1,6 @@
-{
+const { HOST } = process.env;
+
+const swagger = {
     "swagger": "2.0",
     "info": {
       "description": "Servidor com descrição de todos os países.",
@@ -12,7 +14,7 @@
         "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
       }
     },
-    "host": "localhost:10082",
+    "host": HOST,
     "basePath": "/",
     "tags": [
       {
@@ -21,8 +23,8 @@
       }
     ],
     "schemes": [
-        "http",
-        "https"
+        "https",
+        "http"
     ],
     "paths": {
       "/paises": {
@@ -255,4 +257,6 @@
             }
         }
     }
-}
+};
+
+module.exports = swagger;
